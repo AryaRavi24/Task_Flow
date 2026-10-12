@@ -1,0 +1,10 @@
+{
+  "name": "task-manager",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Full-Stack Task Manager (React + Vite + Node + Express + MySQL)",
+  "scripts": {
+    "server": "cd backend && npm run dev",
+    "client": "cd frontend && npm run dev"
+  }
+}

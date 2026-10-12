@@ -1,8 +1,11 @@
 // Base API URL:
-// In production (e.g. Vercel), VITE_API_URL points to the hosted backend (e.g. https://your-backend.onrender.com)
-// In local development, if VITE_API_URL is empty or undefined, it defaults to relative '/api' which Vite proxies to localhost:5000
-const rawBaseUrl = import.meta.env.VITE_API_URL || '';
-const API_BASE = `${rawBaseUrl.replace(/\/$/, '')}/api/tasks`;
+// In production (Vercel): uses VITE_API_URL, falling back to your deployed Render backend URL
+// In local development: defaults to relative '/api' which Vite proxies to localhost:5000
+const rawBaseUrl =
+  import.meta.env.VITE_API_URL ||
+  (import.meta.env.PROD ? 'https://task-flow-pztf.onrender.com' : '');
+
+const API_BASE = `${rawBaseUrl.replace(/\/+$/, '')}/api/tasks`;
 
 // Helper to handle API response and parse JSON or extract error message
 const handleResponse = async (response) => {

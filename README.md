@@ -64,12 +64,7 @@ CREATE TABLE IF NOT EXISTS tasks (
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 );
 ```
-
-> **Already created the table?** Run this migration query:
-> ```sql
-> ALTER TABLE tasks ADD COLUMN due_date DATETIME NULL AFTER description;
-> ```
-
+ 
 ---
 
 ## ⚙️ Configuration (`backend/.env`)
